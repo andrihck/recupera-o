@@ -10,23 +10,18 @@ export default telaInicio = () => {
 
     return (
         <View style={styles.container}>
-            <Picker
-                style={styles.pickerInput}
-                selectedValue={cidade}
-                onValueChange={(item) => setCidade(item)}
-            >
-            <Picker.Item label={'Selecione uma cidade'} />
-                {cities.map((item, index) => (
-                    <Picker.Item key={index} label={item.label} value={item.value} />
-                ))}
+            <Picker>
+                // Implementar aqui o componente picker corretamente. 
+                // Deve conseguir selecionar uma cidade da lista de cidades, e ao selecionar, salvar esta cidade no context
             </Picker>
-            {cidade?<Link href='/principal'><Text>ir para o tempo</Text></Link>:<></>}
-
+            
+            //implementar aqui um ternário condicional onde, se uma cidade foi selecionada, deve aparecer um botão para ir para a proxima tela.
+            // Utilizar o componente Link para fazer esta navegação
         </View>
     )
 }
 
-const cities = [
+const cidades = [
     { label: 'Aracaju', value: 'Aracaju' },
     { label: 'Belém', value: 'Belém' },
     { label: 'Belo Horizonte', value: 'Belo Horizonte' },
@@ -60,18 +55,5 @@ const cities = [
     container: {
         alignItems: 'center',
         marginTop: 400
-    },
-    pickerInput: {
-        width: '80%',
-        backgroundColor: '#fff',
-        shadowColor: '#000',
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        elevation: 5,
-        padding: 10,
-        borderRadius: 10,
-        borderColor: '#ccc',
-        borderWidth: 1,
-        margin: 10,
     }
 })
